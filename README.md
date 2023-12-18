@@ -1,6 +1,6 @@
 # Letterboxd user validations
 
-A JavaScript + Selenium test script that validates that users are able to perform some of their most common operations on https://letterboxd.com through the UI. This test automation project implements the Page Object Model (POM) design pattern, dividing the project in page objects (test/pages) and test cases (test/specs). Validations include:
+A JavaScript + Selenium test script that validates that users are able to perform some of their most common operations on https://letterboxd.com through the UI. This test automation project implements the Page Object Model (POM) design pattern, dividing the project into page objects (test/pages) and test cases (test/specs). Validations include:
 
 - User is able to create a new list, add a film to it and then delete it
 - User is able to add a movie to their watchlist and then remove it
@@ -24,4 +24,5 @@ In order to run the test cases, you must have NodeJS preinstalled:
 ## Notes
 
 - You can run this script in headless mode by adding `chromeOptions.addArguments('--headless')` under line 16 of `test/specs/validations.e2e.js`;
+- Although it's not a recommended practice in automation, an `await driver.sleep()` instruction was added for the deleting a list and removing a film from the watchlist methods given that the success message for those actions is a disappearing one which locator cannot be found by pausing the browser.
 
