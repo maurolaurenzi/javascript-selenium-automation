@@ -9,7 +9,6 @@ export default class LoginPage {
     }
 
     async login() {
-        console.log(process.env);
         await this.driver.findElement(LoginScreen.buttons.signIn).click();
         await this.driver.findElement(LoginScreen.fields.username).sendKeys(process.env.LETTERBOXD_USERNAME);
         await this.driver.findElement(LoginScreen.fields.password).sendKeys(process.env.LETTERBOXD_PASSWORD);

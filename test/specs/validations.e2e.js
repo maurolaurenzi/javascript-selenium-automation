@@ -28,12 +28,13 @@ function generateRandomNumber() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-describe('Create list, add films and delete', function() {
+describe('Create a new list and add films to watchlist', function() {
     this.timeout(300000);
 
     before(async function() {
         // log in to letterboxd
         await driver.get("https://letterboxd.com");
+        await driver.manage().window().maximize();
         await loginPage.login();
     });
 

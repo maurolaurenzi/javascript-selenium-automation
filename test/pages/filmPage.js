@@ -5,12 +5,15 @@ export default class FilmPage {
     }
 
     async addToWatchlist() {
+        // scroll down to the middle of the page to avoid click intercepted by ad
+        await this.driver.executeScript('window.scrollTo(0, 2500)');
         const addToWatchlistButton = await this.driver.findElement(FilmScreen.buttons.addToWatchlist);
-        await this.driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });", addToWatchlistButton);
         await addToWatchlistButton.click();
     }
 
     async removeFromWatchlist() {
+        // scroll down to the middle of the page to avoid click intercepted by ad
+        await this.driver.executeScript('window.scrollTo(0, 2500)');
         await this.driver.findElement(FilmScreen.buttons.removeFromWatchlist).click();
     }
 }
