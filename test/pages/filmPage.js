@@ -15,5 +15,6 @@ export default class FilmPage {
         // scroll down to the middle of the page to avoid click intercepted by ad
         await this.driver.executeScript('window.scrollTo(0, 2500)');
         await this.driver.findElement(FilmScreen.buttons.removeFromWatchlist).click();
+        await this.driver.sleep(3000);
     }
 }
