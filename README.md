@@ -25,4 +25,5 @@ In order to run the test cases, you must have NodeJS preinstalled:
 
 - You can run this script in headless mode by adding `chromeOptions.addArguments('--headless')` under line 16 of `test/specs/validations.e2e.js`;
 - Although it's not a recommended practice in automation, an `await driver.sleep()` instruction was added for the deleting a list and removing a film from the watchlist methods given that the success message for those actions is a disappearing one which locator cannot be found by pausing the browser.
+- You can watch a demo of the tests execution [here](https://vimeo.com/897484055?share=copy).
 
